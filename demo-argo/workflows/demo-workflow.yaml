@@ -1,0 +1,12 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: demo-build-
+spec:
+  entrypoint: main
+  templates:
+  - name: main
+    container:
+      image: alpine:3.18
+      command: ["sh", "-c"]
+      args: ["echo Building Demo App && sleep 10 && echo Done"]

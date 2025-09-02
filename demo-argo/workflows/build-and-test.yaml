@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: demo-build-
+  namespace: argo
+spec:
+  entrypoint: main
+  templates:
+  - name: main
+    steps:
+    - - name: build
+        template: build-image
+    - - name: test
+        template: run-tests
+
+  - name: build-image
+    container:
+      image: docker:20.10
+      command: [ "sh", "-c" ]
+      args: [ "echo building docker image && sleep 10" ]
+
+  - name: run-tests
+    container:
+      image: alpine:3.18
+      command: [ "sh", "-c" ]
+      args: [ "echo running tests && sleep 5" ]

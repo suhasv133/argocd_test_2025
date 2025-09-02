@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: github-events
+spec:
+  github:
+    demo:
+      repositories:
+        - owner: your-org
+          repository: demo-argo
+      webhook:
+        endpoint: /push
+        port: "12000"
+      events:
+        - push
