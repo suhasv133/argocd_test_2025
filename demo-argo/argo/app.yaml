@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/suhasv133/argocd_test_2025.git
     targetRevision: HEAD
-    path: app/overlays/dev
+    path: demo-argo/app/overlays/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: demo
