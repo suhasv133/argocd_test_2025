@@ -6,8 +6,8 @@ spec:
   github:
     demo:
       repositories:
-        - owner: your-org
-          repository: demo-argo
+        - owner: suhasv133
+          repository: argocd_test_2025
       webhook:
         endpoint: /push
         port: "12000"
